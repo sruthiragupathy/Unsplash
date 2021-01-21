@@ -1,14 +1,17 @@
+require('dotenv').config()
+
 const Gallery = require("../Models/Gallery")
 
 exports.getPictureById = (req,res,next,id) =>{
     Gallery.findById(id).exec((err,pic)=>{
-        if(err){
+        
+        if(pic===null||err){
             return res.status(400).json({
                 error:"Picture not found"
             })
         }
         req.pic = pic;
-        console.log(req.pic);
+        // console.log(req.pic);
         next();
     })
    
@@ -29,10 +32,20 @@ exports.addPictures = (req,res) =>{
     .catch(err=>res.json(err))
 }
 
+
+exports.isAuthenticated = (req,res,next)=>{
+    const {password} = req.body;
+    
+    if(password !== process.env.PASSWORD){
+        return res.status(404).json({
+            message:"Password does not match"
+        })
+    }
+    next();
+}
 exports.deletePictures = (req,res)=>{
-    console.log("hi")
+   
     const picture = req.pic;
-    console.log({picture});
     picture.remove((error,pic)=>{
         if(error){
             return res.status(400).json({
