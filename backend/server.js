@@ -12,7 +12,7 @@ const cors = require("cors");
 const port = process.env.PORT||5000;
 
 //DB Connection
-mongoose.connect('mongodb://localhost/unsplash', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(()=>{
     console.log("DB Connected");
 })
