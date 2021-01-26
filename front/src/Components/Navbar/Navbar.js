@@ -1,29 +1,77 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
+import { createPicture } from "../helper/apicall";
 import "./Navbar.css"
+
 
 const NavBar = () =>{
     const [open,setOpen] = useState(false)
-    function openModal(){
+    const [picture,setPicture] = useState({
+        title:"",
+        URL:""
+    })
+    const [error,setError] = useState("");
+    
+    function openModal(e){
+        e.preventDefault();
+        console.log("open")
         setOpen(!open);
     }
+    
+    //onSubmit handler
+    const onSubmit = (e) =>{
+        console.log(JSON.stringify(picture))
+        e.preventDefault();
+        if(picture.title==""){
+            setError("Title");
+            return;
+        }
+        else if(picture.URL==""){
+            setError("URL");
+            return;
+        }
+        createPicture(picture).then(data=>{
+            if(data.error){
+                console.log(data.error)
+            }
+            else{
+                console.log(data)
+            }
+        })
+        setOpen(!open);
+        console.log(open);
+        
+
+    }
+
+    const changeHandler=(e)=>{
+        setPicture({...picture,[e.target.name]:e.target.value});
+        console.log(e.target.name,e.target.value);
+
+    }
+
+
     function Modal(){
         return <div className="form">
                 <h3>Add a new photo</h3>
+                {error&&<p className="error">{error} field is empty</p>}
                 <form>
-                    <label for="Label">Label</label>
+                    <label htmlFor="label">Label</label>
                     {/* <p>Label</p> */}
-                    <input className="form-input"></input>
-                    <label for="URL">URL</label>
-                    <input className="form-input"></input>
-                </form>
-                <div className="btns">
+                    <input onChange = {changeHandler} name="title" className="form-input" placeholder="City Buildings Under Cloudy Sky"></input>
+                    <label htmlFor="URL">URL</label>
+                    <input onChange = {changeHandler} name="URL"  className="form-input" placeholder="https://images.pexels.com/photos/358502/pexels-photo-358502.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" ></input>
+                    <div className="btns">
                     <button className="btn" onClick={openModal}>
                         Cancel
                     </button>
-                    <button className="btn green-btn" onClick={openModal}>
+                    <button className="btn green-btn" onClick={onSubmit}>
                         Submit
                     </button>
                 </div>
+                </form>
+                
+                
+                
                 </div>
         
     }
@@ -38,6 +86,7 @@ const NavBar = () =>{
             
         </nav>
         {open&&Modal()}
+        
         </div>
     )
 }

@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
 .nav-div{
     --input-border:#BDBDBD;
     --green-button-bg:#3DB46D;
+    --dark-red:#B91C1C;
+    --light-red:#FEE2E2
+
 }
 .nav{
     display:flex;
@@ -29,7 +33,7 @@
     /* width:6.5rem;
     text-align:center;*/
     /* height:2rem;  */
-    font-family: 'Noto Sans JP', sans-serif;
+   
     margin-left:1rem;
     padding:0.5rem;
     border:none;
@@ -48,7 +52,7 @@
     
     margin:2rem;
     max-width:25rem;
-    height:15rem;
+    /* height:15rem; */
     margin:2rem auto;
     border:1px solid var(--input-border);
     padding:1rem;
@@ -66,9 +70,10 @@
 .form-input{
     /* width:97%; */
     margin-left:0;
+    margin-bottom:1rem;
     border:1px solid var(--input-border);
     height:1.5rem;
-    font-size:1.25rem;
+    font-size:1rem;
     padding:0.5rem;
     border-radius:12px;
 
@@ -77,15 +82,21 @@
 
 form{
     min-height:9rem;
+    z-index:2;
     display:flex;
     flex-direction:column;
     justify-content: space-between;
+    /* position:absolute; */
     
 }
 
 .btns{
-    float:right;
-    margin-top:1rem;
+    display:flex;
+    justify-content: flex-end;
+}
+
+label{
+    margin-bottom:0.5rem;
 }
 
 
@@ -97,4 +108,21 @@ form{
     100% {
       transform: scale(1);
     }
+  }
+
+  .error{
+    border:1px solid var(--dark-red);
+    padding:0.5rem;
+    border-radius:12px;
+    background:var(--light-red);
+  }
+
+  button,input{
+    font-family: 'Kanit', sans-serif;
+
+  }
+
+  input{
+  color:#374151 ;
+  
   }

@@ -1,2 +1,1 @@
-export const app = process.env.backend;
-
+export const API = process.env.REACT_APP_BACKEND
