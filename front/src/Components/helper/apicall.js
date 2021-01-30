@@ -23,3 +23,22 @@ export const getPictures = () =>{
     .then(response=>response.json())
     .catch(err=>console.log("err",err))
 }
+
+export const deletePictures = (password,pictureId) => {
+    console.log("password",password);
+    console.log(`${API}/${pictureId}`);
+    console.log(JSON.stringify({password}))
+    
+    return fetch(`${API}/${pictureId}`,{
+        method:"DELETE",
+        headers:{
+            Accept:"application/json",
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({password})
+        }
+    )
+    .then(response=>response.json())
+    
+    .catch(err=>console.log("err",err))
+}

@@ -38,7 +38,7 @@ exports.isAuthenticated = (req,res,next)=>{
     
     if(password !== process.env.PASSWORD){
         return res.status(404).json({
-            message:"Password does not match"
+            error:"Password does not match"
         })
     }
     next();

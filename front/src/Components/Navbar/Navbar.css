@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
 .nav-div{
+    /* z-index:2; */
     --input-border:#BDBDBD;
     --green-button-bg:#3DB46D;
     --dark-red:#B91C1C;
-    --light-red:#FEE2E2
+    --light-red:#FEE2E2;
 
 }
 .nav{
@@ -49,11 +50,12 @@
 }
 
 .form{
-    
+    z-index:2;
     margin:2rem;
     max-width:25rem;
+    background:#fff;
     /* height:15rem; */
-    margin:2rem auto;
+    margin:1.5rem auto;
     border:1px solid var(--input-border);
     padding:1rem;
     border-radius:12px;
