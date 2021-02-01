@@ -3,7 +3,7 @@ import { createPicture } from "../helper/apicall";
 import "./Navbar.css"
 
 
-const NavBar = () =>{
+const NavBar = ({loading,setLoading,bright,setBright}) =>{
     const [open,setOpen] = useState(false)
     const [picture,setPicture] = useState({
         title:"",
@@ -15,6 +15,7 @@ const NavBar = () =>{
         e.preventDefault();
         console.log("open")
         setOpen(!open);
+        setBright(!bright);
     }
     
     //onSubmit handler
@@ -35,9 +36,11 @@ const NavBar = () =>{
             }
             else{
                 console.log(data)
+                setLoading(true)
             }
         })
         setOpen(!open);
+        setBright(!bright);
         console.log(open);
         
 

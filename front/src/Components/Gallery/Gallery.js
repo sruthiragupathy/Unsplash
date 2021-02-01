@@ -6,7 +6,7 @@ import "./Gallery.css"
 import '../Navbar/Navbar.css';
 
 
-const Gallery = ({loading,setLoading}) =>{
+const Gallery = ({loading,setLoading,bright,setBright}) =>{
     console.log(setLoading)
 const [data,setData] = useState([])
 const [open,setOpen] = useState(false);
@@ -21,6 +21,8 @@ function handlePassword(e){
 function handleOpen(e){
     e.preventDefault();
     setOpen(!open)
+    setError("")
+    setBright(!bright)
 }
 
 function handleDelete(e){
@@ -30,16 +32,17 @@ function handleDelete(e){
     deletePictures(password,pictureid)
     .then(data=>{
         if(data.error){
-            setError(data.message)
+            setError(data.error)
         }
         else{
             setOpen(!open)
             setLoading(true);
+            setBright(!bright);
             
         }
     })
-    setOpen(!open)
-    setLoading(true);
+    // setOpen(!open)
+    // setLoading(true);
     
     
 }
@@ -78,7 +81,7 @@ function preLoad(){
         }
         else{
             
-            setData(response)
+            setData(response.reverse())
             
         }
     })
@@ -101,19 +104,23 @@ if(data.length==0){
 
 }
 return (
+    <>
     <div className="gallery" >
         {/* {console.log(data.length)} */}
+        {/* {open&&deleteModal()} */}
+
         {loading&&<div className="loader">
             <CircularProgress color="primary"/>
         </div>}
 
         {data.map((item,index)=>{
-            return <Card key={index} item={item} setOpen={value=>setOpen(value)} setError={value=>setError(value)} open={open} setPictureid={value=>setPictureid(value)}/>
+            return <Card key={index} item={item} setOpen={value=>setOpen(value)} setError={value=>setError(value)} open={open} setPictureid={value=>setPictureid(value)} bright={bright} setBright={value=>setBright(value)}/>
                 
         })}
         {console.log(open)}
-        {open&&deleteModal()}
     </div>
+    {open&&deleteModal()}
+    </>
 )
 }
 

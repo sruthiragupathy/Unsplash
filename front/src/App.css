@@ -14,3 +14,47 @@ input:focus,button:focus{
   color: #D1D5DB;
   opacity: 1; /* Firefox */
 }
+.nobright{
+  display: none;
+}
+.bright{
+  position:absolute;
+  top:7rem;
+  left:0;
+  right:0;
+  /* background-image:linear-gradient(hsl(233,26%,24%),transparent);  */
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  bottom:0;  
+
+}
+
+.fade-in{
+  animation:fade-in 500ms ease-in-out;
+}
+
+@keyframes fade-in{
+  from{
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+
+.fade-out{
+  animation:fade-out 500ms ease-in-out;
+}
+
+@keyframes fade-out{
+  from{
+    opacity:1;
+  }
+  to {
+    opacity:0;
+  }
+}
+
+
+
+  

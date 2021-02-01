@@ -113,10 +113,10 @@ label{
   }
 
   .error{
-    border:1px solid var(--dark-red);
+    border:1px solid #B91C1C;
     padding:0.5rem;
     border-radius:12px;
-    background:var(--light-red);
+    background:#FEE2E2;
   }
 
   button,input{

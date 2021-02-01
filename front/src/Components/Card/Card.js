@@ -2,13 +2,14 @@ import React,{useState} from "react";
 import './Card.css'
 
 
-const Card = ({item,setOpen,setError,open,setPictureid}) =>{
+const Card = ({item,setOpen,setError,open,setPictureid,bright,setBright}) =>{
     // console.log(setOpen,setError,open);
     
    function handleDelete(e){
        e.preventDefault();
        setOpen(!open)
        setPictureid(item._id)
+     setBright(!bright)
        console.log(item._id)
 
    }

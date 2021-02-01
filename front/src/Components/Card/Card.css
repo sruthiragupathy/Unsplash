@@ -3,6 +3,7 @@
   /* width:20rem; */
   margin:auto;
   margin-bottom:1.5rem;
+  z-index:0;
   
 
 }
@@ -18,13 +19,13 @@
   position: absolute;
   
   bottom: 0;
-  font-size:1.5rem;
+  font-size:1rem;
   color:white;
   width: 100%;
   text-align: center;
   opacity: 0;
   transition: .5s ease;
-  padding:1rem 0;
+  padding:1.75rem 0;
   
 }
 
