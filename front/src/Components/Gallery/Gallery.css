@@ -32,41 +32,40 @@
   .modal{
 
       position:fixed;
-      top:0rem;
       margin:auto;
-      width:auto;
+      width:23rem;
       top:50%;
       left:50%;
       transform:translate(-50%,-50%);
-      transition:max-width 0.5s ease-in-out,min-width 0.5s ease-in-out;
+      transition:width 0.5s ease-in-out;
       background-color: #fff;
       border:1px solid var(--input-border);
       padding:0.75rem;
       border-radius:1rem;
       z-index:2;
+ 
+
 
   }
 
-.modal-full{
-  min-width:20rem; 
-  max-width: 23rem; 
-  
-
-}
-
+/* 
 @keyframes stretch {
     50% {
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
         left:50%;
-        transform:translateX(-50%);
+        
       transform: scale(0.2);
      }
     
     100% {
-        left:50%;
-        transform:translateX(-50%);
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
       transform: scale(1);
     }
-  }
+  } */
 
   .red-btn{
     background:#EB5757;

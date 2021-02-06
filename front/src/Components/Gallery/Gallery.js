@@ -7,13 +7,12 @@ import '../Navbar/Navbar.css';
 
 
 const Gallery = ({loading,setLoading,bright,setBright}) =>{
-    console.log(setLoading)
 const [data,setData] = useState([])
 const [open,setOpen] = useState(false);
 const [error,setError] = useState("");
 const [password,setPassword] = useState("");
 const [pictureid,setPictureid] = useState("");
-// const [load,setLoad] = useState(false)
+
 function handlePassword(e){
     setPassword(e.target.value);
 }
@@ -47,7 +46,7 @@ function handleDelete(e){
     
 }
 function deleteModal(){
-    return <div className="modal modal-full">
+    return <div className="modal">
         <h3>Are you sure?</h3>
         {error&&<p className="error">{error}</p>}
         <form>

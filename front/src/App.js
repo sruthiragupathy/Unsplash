@@ -17,7 +17,7 @@ else {
 
   return (
     <div className="App">
-      <div className={bright?"bright fade-in":"fade-out nobright"} ></div>
+      <div className={bright?"bright fade-in":"bright fade-out"} ></div>
       <NavBar loading={loading} setLoading={value=>setLoading(value)} bright={bright}  setBright={value=>setBright(value)}/>
       <Gallery loading={loading} setLoading={value=>setLoading(value)} bright={bright} setBright={value=>setBright(value)}/>
     </div>
