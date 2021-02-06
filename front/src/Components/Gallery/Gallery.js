@@ -47,7 +47,7 @@ function handleDelete(e){
     
 }
 function deleteModal(){
-    return <div className="modal">
+    return <div className="modal modal-full">
         <h3>Are you sure?</h3>
         {error&&<p className="error">{error}</p>}
         <form>
@@ -90,7 +90,7 @@ useEffect(()=>{
     console.log("In use effect")
     data.length=0;
     
-    setTimeout(preLoad,2000);
+    setTimeout(preLoad,1500);
     setLoading(false);
     // setLoading(load)
     

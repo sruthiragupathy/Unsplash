@@ -8,6 +8,12 @@ function App() {
 const [loading,setLoading] = useState(false);
 const [bright,setBright] = useState(false);
   console.log("loading",loading)
+if(bright){
+  document.body.style.overflow="hidden"
+}
+else {
+  document.body.style.overflow="scroll"
+}
 
   return (
     <div className="App">

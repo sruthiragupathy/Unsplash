@@ -30,15 +30,15 @@
   }
 
   .modal{
-    /* animation:stretch 500ms ease-in-out; */
 
       position:fixed;
       top:0rem;
       margin:auto;
-      width:23rem;
+      width:auto;
       top:50%;
       left:50%;
       transform:translate(-50%,-50%);
+      transition:max-width 0.5s ease-in-out,min-width 0.5s ease-in-out;
       background-color: #fff;
       border:1px solid var(--input-border);
       padding:0.75rem;
@@ -47,8 +47,15 @@
 
   }
 
+.modal-full{
+  min-width:20rem; 
+  max-width: 23rem; 
+  
+
+}
+
 @keyframes stretch {
-    0% {
+    50% {
         left:50%;
         transform:translateX(-50%);
       transform: scale(0.2);

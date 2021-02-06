@@ -15,6 +15,8 @@ const NavBar = ({loading,setLoading,bright,setBright}) =>{
         e.preventDefault();
         console.log("open")
         setOpen(!open);
+        setError("");
+
         setBright(!bright);
     }
     
@@ -40,6 +42,7 @@ const NavBar = ({loading,setLoading,bright,setBright}) =>{
             }
         })
         setOpen(!open);
+        setError("");
         setBright(!bright);
         console.log(open);
         

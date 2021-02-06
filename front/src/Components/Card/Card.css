@@ -25,7 +25,7 @@
   text-align: center;
   opacity: 0;
   transition: .5s ease;
-  padding:1.75rem 0;
+  padding:1.5rem 0;
   
 }
 
@@ -46,7 +46,7 @@
 
 .container:hover .image{
   /* opacity:0.5; */
-  filter:brightness(50%);
+  filter:brightness(35%);
   
 
 
