@@ -94,7 +94,7 @@ useEffect(()=>{
     // setLoading(load)
     
 },[loading])
-if(data.length==0){
+if(data.length===0){
     
     console.log("data 0");
     return (<div className="loader">

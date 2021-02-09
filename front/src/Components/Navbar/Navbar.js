@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState} from "react";
 import { createPicture } from "../helper/apicall";
 import "./Navbar.css"
 
@@ -24,11 +24,11 @@ const NavBar = ({loading,setLoading,bright,setBright}) =>{
     const onSubmit = (e) =>{
         console.log(JSON.stringify(picture))
         e.preventDefault();
-        if(picture.title==""){
+        if(picture.title===""){
             setError("Title");
             return;
         }
-        else if(picture.URL==""){
+        else if(picture.URL===""){
             setError("URL");
             return;
         }

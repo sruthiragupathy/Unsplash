@@ -1,4 +1,3 @@
-import { fade } from "@material-ui/core";
 import React,{useState} from "react";
 import './App.css';
 import Gallery from './Components/Gallery/Gallery';
