@@ -44,6 +44,7 @@
 .green-btn{
     background:var(--green-button-bg);
     color:#FFF;
+    /* z-index: -1; */
 }
 .green-btn:hover{
     background:#66CC70;
@@ -127,4 +128,8 @@ label{
   input{
   color:#374151 ;
   
+  }
+
+  .nav .hide{
+      z-index:-2;
   }

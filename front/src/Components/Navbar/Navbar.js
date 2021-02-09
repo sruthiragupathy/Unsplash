@@ -87,7 +87,7 @@ const NavBar = ({loading,setLoading,bright,setBright}) =>{
             <div className="nav left">
             <h4>My Unsplash</h4>
             </div>
-            <button className="btn green-btn " onClick={openModal}>Add a Photo</button>
+            <button className={`btn green-btn ${bright?"hide":""}` } onClick={openModal}>Add a Photo</button>
             
         </nav>
         {open&&Modal()}
