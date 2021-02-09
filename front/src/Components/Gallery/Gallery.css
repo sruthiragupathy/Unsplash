@@ -3,7 +3,7 @@
     top:7rem;
     left:0;
     padding:0 2rem;
-    z-index: -4;
+    z-index: -2;
     --btn-red:#EB5757;
     --dark-red:#B91C1C;
     --light-red:#FEE2E2;
@@ -33,7 +33,7 @@
 
       position:fixed;
       margin:auto;
-      width:23rem;
+      min-width:22rem;
       top:50%;
       left:50%;
       transform:translate(-50%,-50%);

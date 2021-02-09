@@ -86,7 +86,6 @@ const NavBar = ({loading,setLoading,bright,setBright}) =>{
         <nav className="nav">
             <div className="nav left">
             <h4>My Unsplash</h4>
-            <input className="search" placeholder="Search" type="text"/>
             </div>
             <button className="btn green-btn " onClick={openModal}>Add a Photo</button>
             
